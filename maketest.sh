@@ -3,6 +3,11 @@
 # used to copy the test file to each folder that starts with digit in current working path, and then add a include statement in the test file that includes the header file in the folder.
 
 # after the above step, a makefile will be generated in each folder with a make option that compiles all cpp files in the folder
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 test_file"
+    exit 1
+fi
+
 Test=$1
 echo $Test
 cp $Test "__test.cpp"
